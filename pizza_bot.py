@@ -1,3 +1,1 @@
-#pizza bot programme
-
-names = ["Mark","Pheobe","Sally","Michael"]
+#Pizza bot programme
