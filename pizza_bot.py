@@ -17,15 +17,31 @@ def welcome():
     name = (names[num])
     print("**Welcome to Dream Pizza**")
     print("***My name is",name, "***")
-    print("**I'll be here to help you order your Dream pizza**")
-
+    print("**I'll be here to help you order your Dream Pizza**")
 
 #Menu for pickup or delivery
 
+def pickup():
+    print ("Is your order for pickup or delivery?")
+    print ("For pickup, please enter 1 ")
+    print ("For delivery, please enter 2 ")
 
+    while True:
+        try:
+            delivery = int(input("Please enter a number: "))
+            if delivery >= 1 and delivery <= 2:
+                if delivery == 1:
+                    print ("Pickup")
+                    break
 
-
-
+                elif delivery == 2:
+                    print ("Delivery")
+                    break
+            else:
+                print("The number must be 1 or 2. ")
+        except ValueError:
+            print ("That is not a valid number.")
+            print ("Please enter 1 or 2.")
 
 # Pick up information - name and phone number
 
@@ -81,11 +97,12 @@ def welcome():
 
 #Main function
 def main():
-    welcome()
     """
     Purpose: to run all functions.
     Parameters: none
     Returns: none
     """
+    welcome()
+    pickup()
 
 main()
