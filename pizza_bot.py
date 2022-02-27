@@ -1,11 +1,22 @@
-#Pizza bot programme
+#Pizza bot program.
 import random
 from random import randint
 
 #List of random names
 names = ["Mark","Pheobe","Sally","Michael","Joyce","Andy", "Hunter","Nuno","Bea","Grace"]
+# Customer details dictionary
+customer_details = {}
 
-#Welcome message with random name
+# Validates inputs to check if they are blank.
+def not_blank(question):
+    valid = False
+    while not valid:
+        response = input(question)
+        if response != "":
+            return response.title()
+        else:
+            print("This cannot be blank.")
+
 def welcome():
     """
     Purpose: to generate a random name for the list and and print out
@@ -15,13 +26,13 @@ def welcome():
     """
     num = randint(0,9)
     name = (names[num])
-    print("**Welcome to Dream Pizza**")
-    print("***My name is",name, "***")
-    print("**I'll be here to help you order your Dream Pizza**")
+    print("** Welcome to Dream Pizza **")
+    print("*** My name is",name, "***")
+    print("** I will be here to help you order your Dream Pizza **")
 
 #Menu for pickup or delivery
 
-def pickup():
+def order_type():
     print ("Is your order for pickup or delivery?")
     print ("For pickup, please enter 1 ")
     print ("For delivery, please enter 2 ")
@@ -32,6 +43,7 @@ def pickup():
             if delivery >= 1 and delivery <= 2:
                 if delivery == 1:
                     print ("Pickup")
+                    pickup()
                     break
 
                 elif delivery == 2:
@@ -45,6 +57,15 @@ def pickup():
 
 # Pick up information - name and phone number
 
+def pickup():
+    question = ("Please enter your name: ")
+    customer_details['name'] = not_blank(question)
+    #print(customer_details['name'])
+
+    question = ("Please enter your phone number: ")
+    customer_details['phone'] = not_blank(question)
+    #print(customer_details['phone'])
+    print(customer_details)
 
 
 
@@ -103,6 +124,6 @@ def main():
     Returns: none
     """
     welcome()
-    pickup()
+    order_type()
 
 main()
