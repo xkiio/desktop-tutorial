@@ -1,7 +1,6 @@
 #Bug - accepts blank input
 
 
-
 print("Please enter the pickup information.")
 
 #customer name

@@ -103,7 +103,6 @@ def delivery_info():
     print(customer_details['suburb'])
 
 
-
 #Pizza menu
 def menu():
     number_pizza = 12

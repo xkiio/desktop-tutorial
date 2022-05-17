@@ -2,7 +2,7 @@
 # will only work for valid input "d" and "p"
 #invalid input triggers else statement but program does not ask for input again
 
-# menu so that user can choose either pickup or delivery
+# menu so that user can choose either pickup or delivery.
 
 print ("Do you want your order delivered or are you picking it up?")
 
